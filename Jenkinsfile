@@ -1,5 +1,8 @@
 pipeline {
     agent any
+     triggers {
+        githubPush()
+      }
   stages{
       stage('Checkout Code from GitHub Repository') {
         checkout scm
