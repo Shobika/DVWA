@@ -3,13 +3,12 @@ pipeline {
     checkout scm
   }
   stage("Build Process"){
-    echo 'Building...'
+    echo 'Building....'
   }
 
   stage("Test Analysis "){
       echo 'Test Analyzing...'
     }
-
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarScanner';
     withSonarQubeEnv() {
