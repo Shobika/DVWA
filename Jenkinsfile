@@ -2,7 +2,9 @@ pipeline {
      agent any
      stages{
       stage('Checkout Code from GitHub Repository'){
-        checkout scm
+        steps{
+         git 'https://github.com/Shobika/DVWA.git'
+        }
       }
       stage('SonarQube Analysis') {
           def scannerHome = tool 'SonarScanner';
