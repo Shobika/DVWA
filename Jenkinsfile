@@ -1,5 +1,6 @@
 pipeline {
      agent any
+     stages{
       stage('Checkout Code from GitHub Repository'){
         checkout scm
       }
@@ -8,5 +9,6 @@ pipeline {
           withSonarQubeEnv() {
           sh "${scannerHome}/bin/sonar-scanner"
       }
+    }
     }
     }
