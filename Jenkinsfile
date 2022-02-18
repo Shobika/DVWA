@@ -1,9 +1,6 @@
 pipeline {
      agent any
-     triggers {
-        githubPush()
-      }
-      stage('Checkout Code from GitHub Repository') {
+      stage('Checkout Code from GitHub Repository'){
         checkout scm
       }
       stage('SonarQube Analysis') {
